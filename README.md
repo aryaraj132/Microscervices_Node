@@ -15,3 +15,7 @@ to build and run the application.
 
 3. Application will launch at http://localhost:3000
 
+## Database Design
+
+![Database Design](database.png)
+
