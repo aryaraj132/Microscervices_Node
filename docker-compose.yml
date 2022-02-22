@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  frontend:
+    container_name: Frontend
+    image: frontend
+    restart: always
+    build: ./frontend
+    ports:
+      - "3000:3000"
+
+  user:
+    container_name: user
+    image: pratilipiuser
+    restart: always
+    build: ./user
+    ports:
+      - "5000:5000"
+
+  content:
+    container_name: content
+    image: pratilipicontent
+    restart: always
+    build: ./content
+    ports:
+      - "4000:4000"
+
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    command: mongod --port 27018
+    volumes:
+      - ./data:/data/db
+    # ports:
+    #   - '27018:27017'
+    
